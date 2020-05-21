@@ -10,7 +10,7 @@ const Post = (props) => {
       <img src="https://i2.wp.com/andrey-eltsov.ru/wp-content/uploads/2017/09/DsSd-Stim_hfhdY_jf-jfY-%D0%A5%D0%B0%D1%81%D0%BA%D0%B8.jpg" alt=""/>
       {props.message}
       <div>
-  <span>like{props.amount}</span>
+  <span>like</span> {props.amount}
       </div>
     </div>
   ) 
