@@ -2,7 +2,10 @@ import React from 'react';
 import s from './Header.module.css'
 const Header = () => {
     return <header className={s.Header}>
-        <img className={s.logo} src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/DC_Comics_logo.png/600px-DC_Comics_logo.png' />
+        <div className={s.logo}>
+               <h1><a href="#">YoNet</a></h1> 
+        </div>
+
     </header>
 }
 
