@@ -1,0 +1,17 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 30px
+}
+.dialog{
+    
+}
+.dialogItems{
+    line-height: 30px;
+}
+.messages{
+
+}
+.message{
+    line-height: 30px;
+}
