@@ -8,6 +8,18 @@ let state = {
         ]
     },
 
+    friendsPage: {
+        friends: [
+            { id: 1, name: 'Kostya' },
+            { id: 2, name: 'Leha' },
+            { id: 3, name: 'Roma' },
+            { id: 4, name: 'Andrey' },
+            { id: 5, name: 'Natasha' },
+            { id: 6, name: 'Nastya' },
+            { id: 7, name: 'Galya' }
+        ]
+    },
+
     dialogsPage: {
         messages: [
             { id: 1, message: 'Hi!!!' },
@@ -27,6 +39,7 @@ let state = {
             { id: 6, name: 'Nastya' },
             { id: 7, name: 'Galya' }
         ]
+    
     }
 
 

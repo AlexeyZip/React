@@ -17,5 +17,11 @@
 
 .item .active{
   color: brown;
+}.img{
+  width: 30px;
+  border-radius: 50%;
+  margin: 10px;
 }
-
+.friendsimg{
+  display: flex;
+}
