@@ -1,4 +1,9 @@
-import { rerenderEntireTree } from "../render";
+// import { rerenderEntireTree } from "../render";
+ 
+let rerenderEntireTree = () => {
+console.log('state changed');
+
+}
 
 let state = {
 
@@ -8,9 +13,8 @@ let state = {
             { id: 2, message: 'It\'s my first post', likesCount: 2 }
         ],
 
-        newPostText: [
-            'react/redux'
-        ]
+        newPostText: 'react/redux'
+        
     },
 
     friendsPage: {
@@ -36,9 +40,8 @@ let state = {
             { id: 7, message: 'Yo!' }
         ],
 
-        newMessageText: [
-            'only react'
-        ],
+        newMessageText: 'only react',
+        
         dialogs: [
             { id: 1, name: 'Kostya' },
             { id: 2, name: 'Leha' },
@@ -54,7 +57,7 @@ let state = {
 
 }
 window.state = state;
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
@@ -65,9 +68,9 @@ export let addPost = () => {
     state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 } 
-export let addMessage = () => {
+export const addMessage = () => {
     let newMessage = {
-        id: 2,
+        id: 8,
         message: state.dialogsPage.newMessageText
     };
 
@@ -75,15 +78,19 @@ export let addMessage = () => {
     state.dialogsPage.newMessageText = '';
     rerenderEntireTree(state);
 }
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
    
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 
-export let updateNewMessageText = (newMessage) => {
+export const updateNewMessageText = (newMessage) => {
     state.dialogsPage.newMessageText = newMessage;
     rerenderEntireTree(state);
 }
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+} 
 
 export default state;
