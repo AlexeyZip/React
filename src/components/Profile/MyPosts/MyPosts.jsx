@@ -8,7 +8,7 @@ import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../r
 
 const MyPosts = (props) => {
 
-  let postsElement = props.posts.map(post=><Post message={post.message} likesCount = {post.likesCount}/>);
+  let postsElement = props.posts.map(post => <Post message={post.message} likesCount={post.likesCount} />);
 
   let newPostElement = React.createRef();
 
@@ -24,24 +24,24 @@ const MyPosts = (props) => {
     // let action = updateNewPostTextActionCreator(text);
     // props.dispatch(action);
   }
-  
+
   return <div className={s.postsBlock}>
-      My posts
+    My posts
     <div>
-        <div>
-        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-        </div>
-        <div className="">
+      <div>
+        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
+      </div>
+      <div className="">
         <button onClick={onAddPost}>Add post</button>
         {/* <button>Remove</button> */}
-        </div>
-    </div>
-      <div className={s.posts}>
-      {postsElement}
-        {/* <Post message={posts[0].message} likesCount = {posts[0].likesCount}/>
-        <Post message={posts[1].message} likesCount = {posts[1].likesCount}/> */}
       </div>
     </div>
+    <div className={s.posts}>
+      {postsElement}
+      {/* <Post message={posts[0].message} likesCount = {posts[0].likesCount}/>
+        <Post message={posts[1].message} likesCount = {posts[1].likesCount}/> */}
+    </div>
+  </div>
 
 
 }
