@@ -1,5 +1,10 @@
 // import { rerenderEntireTree } from "../render";
 
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
+
 let store = {
     _state: {
         profilePage: {
@@ -48,33 +53,6 @@ let store = {
             ]
         }
     },
-
-    // _addPost(){let newPost = {
-    //             id: 5,
-    //             message: this._state.profilePage.newPostText,
-    //             likesCount: 0
-    //         };
-    //         this._state.profilePage.posts.push(newPost);
-    //         this._state.profilePage.newPostText = '';
-    //         this._callSubscriber(this._state);}
-    // _updateNewPostText(newText){
-    //     this._state.profilePage.newPostText = action.newText;
-    //     this._callSubscriber(this._state);
-    // }
-    // _addMessage(){
-    //     let newMessage = {
-    //         id: 8,
-    //         message: this._state.dialogsPage.newMessageText
-    //     };
-
-    //     this._state.dialogsPage.messages.push(newMessage);
-    //     this._state.dialogsPage.newMessageText = '';
-    //     this._callSubscriber(this._state);
-    // }
-    // _updateNewMessageText(newText){
-    //     this._state.dialogsPage.newMessageText = action.newMessage;
-    //         this._callSubscriber(this._state);
-    // }
     
     _callSubscriber() {
         console.log('state changed');
@@ -91,34 +69,20 @@ let store = {
 
     
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {
-                id: 8,
-                message: this._state.dialogsPage.newMessageText
-            };
 
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-            this._state.dialogsPage.newMessageText = action.newMessage;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.friendsPage = sidebarReducer(this._state.friendsPage, action);
+
+        this._callSubscriber(this._state);
     }
 
 }
+
+    
+
+    
+
 
 export default store;
 window.store = store;
