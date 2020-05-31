@@ -40,8 +40,6 @@ let store = {
                 { id: 7, message: 'Yo!' }
             ],
 
-            newMessageText: 'react',
-
             dialogs: [
                 { id: 1, name: 'Kostya' },
                 { id: 2, name: 'Leha' },
@@ -50,8 +48,9 @@ let store = {
                 { id: 5, name: 'Natasha' },
                 { id: 6, name: 'Nastya' },
                 { id: 7, name: 'Galya' }
-            ]
-        }
+            ],
+            newMessageText: ""
+        },
     },
     
     _callSubscriber() {
