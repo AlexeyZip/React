@@ -13,7 +13,6 @@ import Friends from './components/Friends/Friends';
 
 
 const App = (props) => {
- 
   return (
       <div className='app-wrapper'>
         <Header />
