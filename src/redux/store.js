@@ -69,7 +69,6 @@ let store = {
 
     
     dispatch(action) {
-
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
         this._state.friendsPage = sidebarReducer(this._state.friendsPage, action);
@@ -85,4 +84,4 @@ let store = {
 
 
 export default store;
-window.store = store;
+// window.store = store;
