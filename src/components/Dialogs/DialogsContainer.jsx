@@ -8,11 +8,7 @@ import Dialogs from './Dialogs';
 
 
 const DialogsContainer = (props) => {
-
     let state = props.store.getState().dialogsPage;
-
-   
-   
     let addMessage = () => {
         props.store.dispatch(addMessageActionCreator());
     }
