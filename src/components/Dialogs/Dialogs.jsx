@@ -5,6 +5,7 @@ import DialogItems from './DialogItem/DialogItem';
 import MessageItems from './Message/Message';
 import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/dialogs-reducer';
 import { Field, reduxForm } from 'redux-form';
+import AddMessagesForm from './AddMessagesForm';
 
 
 const Dialogs = (props) => {
@@ -31,25 +32,13 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 <div className="">{messagesElements}</div>
             </div>
-        <AddMessageFormRedux onSubmit={addNewMessage}/>
+        <AddMessagesForm onSubmit={addNewMessage}/>
         </div>
     )
 
 }
 
-const AddMessageForm = (props) => {
-    return (
-        <div>
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field component="textarea" name="newMessageText" placeholder="Enter your message"/>
-            </div>
-            <div><button>send message</button></div>
-        </form>
-        </div>
-    )
-}
 
-const AddMessageFormRedux = reduxForm({form: "dialogAddMessageForm"}) (AddMessageForm);
+
 
 export default Dialogs;
